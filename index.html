@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cylia — Cours ados et stages adultes de danse</title>
+  <meta name="description" content="Cours ados et stages adultes de danse avec Cylia à Lescheraines, le samedi matin hors vacances scolaires, à partir de septembre 2026." />
+  <style>
+    :root{
+      --bg:#fff8f5;
+      --white:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --rose:#b35a7d;
+      --rose-dark:#5f2042;
+      --rose-mid:#7b2955;
+      --rose-soft:#fff1f6;
+      --border:#f1d8e2;
+      --shadow:0 20px 60px rgba(95,32,66,.08);
+      --radius:30px;
+      --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+    .btn{
+      display:inline-block;padding:14px 22px;border-radius:18px;font-weight:700;
+      transition:.2s ease; border:1px solid transparent;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:#fff;color:var(--rose-dark);box-shadow:0 12px 30px rgba(0,0,0,.12)}
+    .btn-secondary{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.28);color:#fff;backdrop-filter: blur(10px)}
+    .pill{
+      display:inline-block;padding:9px 14px;border-radius:999px;
+      background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(12px);
+      color:#fff;font-size:14px
+    }
+    header.hero{
+      position:relative;overflow:hidden;color:#fff;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,.18), transparent 35%),
+        linear-gradient(135deg,#41142c 0%,#7b2955 45%,#e47886 100%);
+    }
+    .hero::before,.hero::after{
+      content:"";position:absolute;border-radius:50%;filter:blur(60px);opacity:.3;pointer-events:none
+    }
+    .hero::before{width:280px;height:280px;background:#fff;left:-80px;top:-80px}
+    .hero::after{width:320px;height:320px;background:#ffd7e2;right:-60px;top:60px}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:14px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.20);
+      background:rgba(255,255,255,.10);backdrop-filter:blur(12px);margin-top:28px
+    }
+    .brand small{display:block;letter-spacing:.22em;text-transform:uppercase;font-weight:700;opacity:.82}
+    .brand span{font-size:14px;opacity:.78}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:42px;align-items:center;padding:44px 0 90px}
+    h1{
+      margin:18px 0 0;font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.03;font-weight:900;
+      max-width:850px
+    }
+    .lead{font-size:clamp(1.05rem,2vw,1.25rem);max-width:780px;opacity:.93;margin-top:22px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+    .tag{
+      border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(12px);font-size:14px
+    }
+    .hero-card-wrap{position:relative}
+    .hero-glow{position:absolute;inset:-12px;background:rgba(255,255,255,.15);filter:blur(26px);border-radius:34px}
+    .hero-card{
+      position:relative;border-radius:34px;padding:18px;background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(14px);box-shadow:0 30px 80px rgba(0,0,0,.14)
+    }
+    .hero-card-inner{background:#fff7fb;color:var(--text);border-radius:26px;padding:18px}
+    .photo-placeholder{
+      aspect-ratio:4/5;border-radius:22px;border:1px solid #f3d6df;
+      display:flex;align-items:center;justify-content:center;text-align:center;
+      color:#6b7280;padding:24px;background:linear-gradient(180deg,#fce7ef 0%,#fff8fb 100%)
+    }
+    .focus-card{
+      margin-top:16px;border-radius:22px;padding:18px;background:var(--rose-soft);border:1px solid #f3d6df
+    }
+    .eyebrow{
+      font-size:13px;text-transform:uppercase;letter-spacing:.24em;font-weight:700;color:var(--rose)
+    }
+    section{padding:72px 0}
+    .grid-2{display:grid;grid-template-columns:.95fr 1.05fr;gap:28px}
+    .card{
+      background:var(--white);border:1px solid var(--border);border-radius:var(--radius);
+      box-shadow:var(--shadow);padding:32px
+    }
+    .card.soft{background:linear-gradient(180deg,#fff1f6 0%,#fff 100%)}
+    h2{
+      margin:10px 0 0;font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;font-weight:900;color:#491733
+    }
+    h3{margin:0;font-size:1.7rem;line-height:1.2;color:var(--rose-dark)}
+    p{margin:0}
+    .mt-16{margin-top:16px}.mt-20{margin-top:20px}.mt-24{margin-top:24px}.mt-32{margin-top:32px}
+    .stats-grid,.feature-grid,.program-grid,.summary-grid{display:grid;gap:20px}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .program-grid,.feature-grid{grid-template-columns:repeat(2,1fr)}
+    .feature-grid.three{grid-template-columns:repeat(3,1fr)}
+    .muted{color:var(--muted)}
+    .program-card{position:relative;overflow:hidden}
+    .program-card::after{
+      content:"";position:absolute;right:-20px;top:-20px;width:120px;height:120px;border-radius:50%;
+      background:#ffd8e3;filter:blur(40px);opacity:.5
+    }
+    .badge{
+      display:inline-block;border-radius:999px;padding:9px 14px;font-size:14px;font-weight:700;
+      background:var(--rose-soft);border:1px solid #f3d6df;color:#a54871
+    }
+    .price{
+      display:inline-block;border-radius:999px;padding:10px 16px;background:var(--rose-dark);color:#fff;
+      font-weight:700;box-shadow:0 12px 30px rgba(95,32,66,.18)
+    }
+    .number{
+      width:48px;height:48px;border-radius:18px;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,#ffdce6 0%,#fff1f6 100%);border:1px solid #f3d6df;
+      color:#8f345f;font-weight:900
+    }
+    .cta{
+      border-radius:36px;overflow:hidden;color:#fff;
+      background:linear-gradient(135deg,#4a1631 0%,#7b2955 50%,#dc6f85 100%);
+      box-shadow:0 30px 80px rgba(95,32,66,.18)
+    }
+    .cta-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;padding:34px}
+    .cta-box{
+      border-radius:28px;padding:24px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);
+      backdrop-filter:blur(12px)
+    }
+    footer{
+      border-top:1px solid var(--border);background:#fff;padding:22px 0;color:#6b7280;font-size:14px
+    }
+    .footer-inner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .program-note{
+      margin-top:18px;font-size:15px;color:#7a5562
+    }
+    @media (max-width: 980px){
+      .hero-grid,.grid-2,.cta-grid,.feature-grid.three,.program-grid{grid-template-columns:1fr}
+      .stats-grid{grid-template-columns:1fr 1fr}
+      section{padding:58px 0}
+    }
+    @media (max-width: 640px){
+      .container{padding:0 18px}
+      .topbar{border-radius:24px;align-items:flex-start;flex-direction:column}
+      .stats-grid,.feature-grid,.program-grid{grid-template-columns:1fr}
+      .btn{width:100%;text-align:center}
+      .hero-actions{flex-direction:column}
+      .footer-inner{flex-direction:column}
+      .card{padding:24px}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <small>Cylia</small>
+          <span>Cours ados & stages adultes</span>
+        </div>
+        <a class="btn btn-primary" href="#contact">Me contacter</a>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <div class="pill">Samedi matin hors vacances scolaires • Lescheraines</div>
+          <h1>Cours ados et stages adultes de danse avec une énergie festive et élégante</h1>
+          <p class="lead">
+            À partir de septembre 2026, Cylia propose des cours pour adolescents et des stages adultes
+            au-dessus de la Maison des Artisans à Lescheraines, dans une ambiance chaleureuse,
+            dynamique et accessible.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#programme">Voir le programme</a>
+            <a class="btn btn-secondary" href="#contact">Demander des renseignements</a>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Danses latines</span>
+            <span class="tag">Cours ados</span>
+            <span class="tag">Stages adultes</span>
+            <span class="tag">Ambiance conviviale</span>
+            <span class="tag">Samedi matin</span>
+            <span class="tag">À partir de septembre 2026</span>
+          </div>
+        </div>
+
+        <div class="hero-card-wrap">
+          <div class="hero-glow"></div>
+          <div class="hero-card">
+            <div class="hero-card-inner">
+              <div class="photo-placeholder">
+                Ajoute ici la photo de Cylia<br />
+                portrait / photo de danse
+              </div>
+              <div class="focus-card">
+                <div class="eyebrow">Focus</div>
+                <h3 class="mt-16">Stage adulte</h3>
+                <p class="mt-16 muted">Environ 1 fois par mois • 11h30 à 12h30</p>
+                <div class="mt-16"><span class="price">10€ le stage</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="grid-2">
+        <div class="card">
+          <div class="eyebrow">À propos</div>
+          <h2>Qui est Cylia ?</h2>
+          <p class="mt-24 muted" style="font-size:18px; line-height:1.8;">
+            Cylia est une ancienne compétitrice en danses latines. Elle met aujourd’hui son expérience,
+            sa passion et sa sensibilité au service de cours ados et de stages adultes pensés pour transmettre
+            le plaisir de danser dans un cadre motivant et rassurant.
+          </p>
+          <p class="mt-20 muted" style="font-size:18px; line-height:1.8;">
+            Son univers mêle technique, rythme, expression corporelle et convivialité, avec un style festif
+            mais toujours harmonieux et accessible.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="card soft" style="grid-column:1 / -1;">
+            <div class="eyebrow">Le lieu</div>
+            <h3 class="mt-16">Lescheraines • 73340</h3>
+            <p class="mt-16 muted">
+              Les cours et stages se déroulent au-dessus de la Maison des Artisans, dans un cadre local,
+              pratique et convivial.
+            </p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Téléphone</div>
+            <h3 class="mt-16">06 72 44 69 69</h3>
+            <p class="mt-16 muted">Pour demander des renseignements ou obtenir les prochaines dates.</p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Lancement</div>
+            <h3 class="mt-16">Septembre 2026</h3>
+            <p class="mt-16 muted">Organisation évolutive, modifiable selon les besoins et les inscriptions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="programme" style="background:linear-gradient(180deg,#fff0f5 0%,#fff8f5 100%);border-top:1px solid #f3d6df;border-bottom:1px solid #f3d6df;">
+    <div class="container">
+      <div style="max-width:830px;margin:0 auto;text-align:center;">
+        <div class="eyebrow">Programme</div>
+        <h2>Une organisation claire et attractive</h2>
+        <p class="mt-24 muted" style="font-size:18px; line-height:1.8;">
+          Les séances ont lieu le samedi matin hors vacances scolaires. Les cours ados sont prévus de 9h30 à 12h30,
+          tandis que les stages adultes sont proposés environ une fois par mois, de 11h30 à 12h30.
+        </p>
+        <p class="program-note">
+          À noter : les horaires se chevauchent actuellement entre 11h30 et 12h30. Ils pourront être ajustés ensuite.
+        </p>
+      </div>
+
+      <div class="program-grid mt-32">
+        <div class="card program-card">
+          <div class="badge">Tous les samedis matin hors vacances scolaires</div>
+          <h3 class="mt-20">Cours ados</h3>
+          <p class="mt-16" style="font-size:19px;font-weight:700;color:#d06587;">9h30 à 12h30</p>
+          <p class="mt-20 muted" style="font-size:18px; line-height:1.8;">
+            Des cours pensés pour les adolescents pour progresser, développer le rythme, la coordination
+            et l’aisance corporelle dans une ambiance dynamique, joyeuse et structurée.
+          </p>
+          <div class="mt-24">
+            <span class="price" style="background:#8c7080;">Tarif à préciser</span>
+          </div>
+        </div>
+
+        <div class="card program-card">
+          <div class="badge">Environ 1 fois par mois</div>
+          <h3 class="mt-20">Stages adultes</h3>
+          <p class="mt-16" style="font-size:19px;font-weight:700;color:#d06587;">11h30 à 12h30</p>
+          <p class="mt-20 muted" style="font-size:18px; line-height:1.8;">
+            Des stages adultes accessibles et motivants pour découvrir, reprendre ou approfondir la danse
+            avec une approche festive, élégante et progressive.
+          </p>
+          <div class="mt-24">
+            <span class="price">10€ le stage</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div style="max-width:860px;margin:0 auto;text-align:center;">
+        <div class="eyebrow">Pourquoi choisir Cylia ?</div>
+        <h2>Une danse vivante, accessible et inspirante</h2>
+      </div>
+
+      <div class="feature-grid three mt-32">
+        <div class="card">
+          <div class="number">01</div>
+          <h3 class="mt-20">Ancienne compétitrice</h3>
+          <p class="mt-16 muted" style="font-size:18px; line-height:1.8;">
+            Cylia transmet son expérience des danses latines avec authenticité, énergie et exigence.
+          </p>
+        </div>
+        <div class="card">
+          <div class="number">02</div>
+          <h3 class="mt-20">Ambiance festive</h3>
+          <p class="mt-16 muted" style="font-size:18px; line-height:1.8;">
+            Une atmosphère chaleureuse et entraînante, sans être excessive, pour donner envie de revenir.
+          </p>
+        </div>
+        <div class="card">
+          <div class="number">03</div>
+          <h3 class="mt-20">Progression accessible</h3>
+          <p class="mt-16 muted" style="font-size:18px; line-height:1.8;">
+            Chaque séance est pensée pour faire évoluer les participants à leur rythme, avec plaisir et confiance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="cta">
+        <div class="cta-grid">
+          <div>
+            <div class="eyebrow" style="color:rgba(255,255,255,.74)">L’esprit du projet</div>
+            <h2 style="color:#fff;">Danser, progresser et partager un vrai moment de plaisir</h2>
+            <p class="mt-24" style="font-size:18px;line-height:1.8;color:rgba(255,255,255,.92);max-width:720px;">
+              Les cours et stages proposés par Cylia permettent de découvrir ou d’approfondir la danse dans une ambiance
+              chaleureuse, rythmée et accessible, avec une touche festive qui donne de l’élan sans perdre en élégance.
+            </p>
+          </div>
+          <div class="cta-box">
+            <div class="eyebrow" style="color:rgba(255,255,255,.74)">Infos rapides</div>
+            <div class="summary-grid mt-20" style="font-size:18px;">
+              <div><strong>Lieu :</strong> Maison des Artisans, Lescheraines</div>
+              <div><strong>Public :</strong> ados et adultes</div>
+              <div><strong>Stages adultes :</strong> 10€</div>
+              <div><strong>Téléphone :</strong> 06 72 44 69 69</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="grid-2">
+        <div class="card">
+          <div class="eyebrow">Contact</div>
+          <h2>Demander des renseignements</h2>
+          <p class="mt-24 muted" style="font-size:18px;line-height:1.8;">
+            Pour obtenir des informations sur les modalités, les prochaines dates ou les inscriptions,
+            vous pouvez contacter Cylia directement par téléphone.
+          </p>
+          <div class="mt-24 card soft" style="padding:24px;">
+            <div class="eyebrow">Téléphone</div>
+            <h3 class="mt-16" style="font-size:2rem;">06 72 44 69 69</h3>
+          </div>
+        </div>
+
+        <div class="card soft">
+          <div class="eyebrow">Résumé</div>
+          <div class="summary-grid mt-20" style="font-size:18px;">
+            <div><strong>Activité :</strong> cours ados et stages adultes</div>
+            <div><strong>Début :</strong> septembre 2026</div>
+            <div><strong>Jour :</strong> samedi matin hors vacances scolaires</div>
+            <div><strong>Cours ados :</strong> 9h30 à 12h30</div>
+            <div><strong>Stages adultes :</strong> environ 1 fois par mois • 11h30 à 12h30</div>
+            <div><strong>Tarif stage adulte :</strong> 10€</div>
+            <div><strong>Lieu :</strong> au-dessus de la Maison des Artisans, Lescheraines (73340)</div>
+            <div><strong>Instagram :</strong> à compléter</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Cours ados et stages adultes avec Cylia</div>
+      <div>Lescheraines • Samedi matin hors vacances scolaires • Stages adultes 10€</div>
+    </div>
+  </footer>
+</body>
+</html>
